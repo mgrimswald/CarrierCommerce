@@ -1,0 +1,37 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	metadata-complete="false" version="3.0">
+
+	<display-name>CarrierCommerce</display-name>
+
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>CarrierCommerceRealm</realm-name>
+		<form-login-config>
+			<form-login-page>/login</form-login-page>
+			<form-error-page>/login?error=1</form-error-page>
+		</form-login-config>
+	</login-config>
+	
+	<jsp-config>
+		<taglib>
+			<taglib-uri>http://bargenson.fr/jsp/el/functions</taglib-uri>
+			<taglib-location>/WEB-INF/tags/functions.tld</taglib-location>
+		</taglib>
+		<taglib>
+			<taglib-uri>http://bargenson.fr/jsp/el/constants</taglib-uri>
+			<taglib-location>/WEB-INF/tags/constants.tld</taglib-location>
+		</taglib>
+	</jsp-config>
+
+</web-app>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "http://www.eclipse.org/jetty/configure.dtd">
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+	<Get name="securityHandler">
+		<Set name="loginService">
+			<New class="org.eclipse.jetty.plus.jaas.JAASLoginService">
+				<Set name="Name">CarrierCommerceRealm</Set>
+				<Set name="LoginModuleName">CarrierCommerceLoginModule</Set>
+				<Set name="roleClassNames">
+					<Array type="java.lang.String">
+						<Item>fr.bargenson.utils.security.JAASRole</Item>
+					</Array>
+				</Set>
+			</New>
+		</Set>
+	</Get>
+</Configure>
